@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://dju7d1cuc5fdl"]
+[gd_scene load_steps=2 format=3 uid="uid://dju7d1cuc5fdl"]
+
+[ext_resource type="PackedScene" uid="uid://b5dtfgb1qp3w6" path="res://objs/test.tscn" id="1_bt02i"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2, 2)
+
+[node name="test" parent="." instance=ExtResource("1_bt02i")]
+position = Vector2(138, 24)

@@ -1,13 +1,33 @@
 [gd_scene load_steps=2 format=3 uid="uid://dju7d1cuc5fdl"]
 
-[ext_resource type="PackedScene" uid="uid://b5dtfgb1qp3w6" path="res://objs/test.tscn" id="1_bt02i"]
+[ext_resource type="PackedScene" uid="uid://dy7l5ltcwvi27" path="res://objs/Target.tscn" id="1_pnl83"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2, 2)
+scale = Vector2(1.094, 1)
+anchor_mode = 0
 
-[node name="test" parent="." instance=ExtResource("1_bt02i")]
-position = Vector2(138, 24)
+[node name="Target" parent="." instance=ExtResource("1_pnl83")]
+position = Vector2(293, 361)
+
+[node name="Target2" parent="." instance=ExtResource("1_pnl83")]
+modulate = Color(0, 0.882353, 1, 1)
+position = Vector2(543, 431)
+
+[node name="Target3" parent="." instance=ExtResource("1_pnl83")]
+modulate = Color(1, 0.835294, 0, 1)
+position = Vector2(454, 126)
+
+[node name="Target4" parent="." instance=ExtResource("1_pnl83")]
+modulate = Color(1, 0.235294, 0, 1)
+position = Vector2(686, 249)
+
+[node name="Target5" parent="." instance=ExtResource("1_pnl83")]
+modulate = Color(0, 0.74902, 1, 1)
+position = Vector2(917, 485)
+
+[node name="Target6" parent="." instance=ExtResource("1_pnl83")]
+modulate = Color(0, 1, 0.533333, 1)
+position = Vector2(988, 293)

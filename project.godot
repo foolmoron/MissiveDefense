@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="Missive Defense"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.0", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=810
+window/stretch/mode="viewport"
+window/handheld/orientation=1
 
 [dotnet]
 

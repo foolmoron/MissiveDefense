@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 175.681 136.7" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1, 0, 0, 1, 455.801971, 105.696182)" style="fill:#000000;">
+    <rect x="-446.233" y="-96.973" width="4" height="100"/>
+    <rect x="-440.233" y="-96.973" width="2" height="100"/>
+    <rect x="-434.233" y="-96.973" width="2" height="100"/>
+    <rect x="-424.233" y="-96.973" width="4" height="100"/>
+    <rect x="-418.233" y="-96.973" width="6" height="100"/>
+    <rect x="-406.233" y="-96.973" width="2" height="100"/>
+    <rect x="-402.233" y="-96.973" width="2" height="100"/>
+    <rect x="-398.233" y="-96.973" width="4" height="100"/>
+    <rect x="-390.233" y="-96.973" width="2" height="100"/>
+    <rect x="-380.233" y="-96.973" width="2" height="100"/>
+    <rect x="-364.233" y="-96.973" width="2" height="100"/>
+    <rect x="-358.233" y="-96.973" width="2" height="100"/>
+    <rect x="-352.233" y="-96.973" width="8" height="100"/>
+    <rect x="-342.233" y="-96.973" width="2" height="100"/>
+    <rect x="-336.233" y="-96.973" width="6" height="100"/>
+    <rect x="-320.233" y="-96.973" width="4" height="100"/>
+    <rect x="-314.233" y="-96.973" width="4" height="100"/>
+    <rect x="-304.233" y="-96.973" width="6" height="100"/>
+    <rect x="-296.233" y="-96.973" width="2" height="100"/>
+    <rect x="-292.233" y="-96.973" width="4" height="100"/>
+    <text style="font: 20px monospace; white-space: pre;" text-anchor="middle" x="-367.233" y="25.027">Test</text>
+  </g>
+</svg>

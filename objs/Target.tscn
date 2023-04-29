@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy7l5ltcwvi27"]
+
+[ext_resource type="Texture2D" uid="uid://d1ibpsrtw2wn1" path="res://art/circle.svg" id="1_x6xfu"]
+[ext_resource type="Texture2D" uid="uid://cemfcds4038cu" path="res://art/square.svg" id="2_jo04f"]
+[ext_resource type="Script" path="res://scripts/RotateParent.cs" id="3_crpnn"]
+
+[node name="Target" type="Node2D"]
+scale = Vector2(0.0543103, 0.0543103)
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_x6xfu")
+
+[node name="EyeL" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-88, -87)
+scale = Vector2(-0.150815, -0.150815)
+texture = ExtResource("1_x6xfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(91, -70)
+scale = Vector2(-0.150815, -0.150815)
+texture = ExtResource("1_x6xfu")
+
+[node name="Square" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-16, 102)
+scale = Vector2(0.47, 0.042)
+texture = ExtResource("2_jo04f")
+
+[node name="RotateParent" type="Node" parent="."]
+script = ExtResource("3_crpnn")
+SpeedRad = 266.818

@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dju7d1cuc5fdl"]
+[gd_scene load_steps=6 format=3 uid="uid://dju7d1cuc5fdl"]
 
 [ext_resource type="PackedScene" uid="uid://dy7l5ltcwvi27" path="res://objs/Target.tscn" id="1_pnl83"]
+[ext_resource type="PackedScene" uid="uid://ckksm06dkqa2a" path="res://objs/Wall.tscn" id="2_rqc7e"]
+[ext_resource type="PackedScene" uid="uid://b7f8s3lx4ig3l" path="res://objs/GravitySquare.tscn" id="3_fyana"]
+[ext_resource type="Script" path="res://scripts/ClickArea.cs" id="4_ggtct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqv81"]
+size = Vector2(1277.5, 820.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,3 +37,56 @@ position = Vector2(917, 485)
 [node name="Target6" parent="." instance=ExtResource("1_pnl83")]
 modulate = Color(0, 1, 0.533333, 1)
 position = Vector2(988, 293)
+
+[node name="Wall" parent="." instance=ExtResource("2_rqc7e")]
+position = Vector2(162, 403)
+scale = Vector2(0.239184, 9.05063)
+
+[node name="Wall4" parent="." instance=ExtResource("2_rqc7e")]
+position = Vector2(722, 843)
+scale = Vector2(14.881, 0.609)
+
+[node name="Wall5" parent="." instance=ExtResource("2_rqc7e")]
+position = Vector2(720, -34)
+scale = Vector2(14.881, 0.609)
+
+[node name="Wall2" parent="." instance=ExtResource("2_rqc7e")]
+position = Vector2(-32, 408)
+scale = Vector2(0.609, 8.42312)
+
+[node name="Wall3" parent="." instance=ExtResource("2_rqc7e")]
+position = Vector2(1477, 408)
+scale = Vector2(0.609, 8.42312)
+
+[node name="GravityObj" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(308, 612)
+
+[node name="GravityObj2" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(410, 506)
+
+[node name="GravityObj3" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(526, 358)
+
+[node name="GravityObj4" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(677, 422)
+
+[node name="GravityObj5" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(776, 354)
+
+[node name="GravityObj6" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(1020, 527)
+
+[node name="GravityObj7" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(847, 201)
+
+[node name="GravityObj8" parent="." instance=ExtResource("3_fyana")]
+position = Vector2(1151, 356)
+
+[node name="ClickArea" type="Area2D" parent="."]
+script = ExtResource("4_ggtct")
+Force = 12291.6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(805.25, 404.75)
+shape = SubResource("RectangleShape2D_uqv81")
+debug_color = Color(0, 0.596078, 0.701961, 0.0901961)

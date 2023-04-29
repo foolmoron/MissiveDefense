@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxmxiqx6r2a2"]
+
+[ext_resource type="Texture2D" uid="uid://cemfcds4038cu" path="res://art/square.svg" id="1_fh5kr"]
+[ext_resource type="Script" path="res://objs/GravityObj.cs" id="1_tj68t"]
+
+[node name="GravityObj" type="Node2D"]
+script = ExtResource("1_tj68t")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Anim" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_fh5kr")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+polygon = PackedVector2Array(36, -4, 23, 36, -31, 29, -37, -12, 8, -32)

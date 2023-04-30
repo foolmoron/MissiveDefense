@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3q3u12ydew8"]
+
+[ext_resource type="Texture2D" uid="uid://bjii8c3oo3yqp" path="res://art/meter.svg" id="1_df5v5"]
+[ext_resource type="Script" path="res://objs/Meter.cs" id="1_exukn"]
+[ext_resource type="Texture2D" uid="uid://dw175vjftdnx8" path="res://art/meterbar.svg" id="2_rffqu"]
+
+[node name="Meter" type="Node2D" node_paths=PackedStringArray("MeterBar")]
+script = ExtResource("1_exukn")
+MeterBar = NodePath("Bar")
+MinRot = -116.2
+MaxRot = 116.2
+
+[node name="Sections" type="Sprite2D" parent="."]
+scale = Vector2(0.431865, 0.431865)
+texture = ExtResource("1_df5v5")
+
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(-1, 14)
+rotation = 2.02807
+scale = Vector2(0.49886, 0.49886)
+texture = ExtResource("2_rffqu")
+offset = Vector2(2.08165e-12, -75)

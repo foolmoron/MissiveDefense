@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dju7d1cuc5fdl"]
+[gd_scene load_steps=8 format=3 uid="uid://dju7d1cuc5fdl"]
 
 [ext_resource type="PackedScene" uid="uid://dy7l5ltcwvi27" path="res://objs/Target.tscn" id="1_pnl83"]
 [ext_resource type="PackedScene" uid="uid://ckksm06dkqa2a" path="res://objs/Wall.tscn" id="2_rqc7e"]
-[ext_resource type="PackedScene" uid="uid://n4aaog1wt8pg" path="res://objs/Missile.tscn" id="4_e2o46"]
 [ext_resource type="Script" path="res://scripts/ClickArea.cs" id="4_ggtct"]
-[ext_resource type="PackedScene" uid="uid://co25lrxb4j5qf" path="res://objs/Mail.tscn" id="5_viiry"]
+[ext_resource type="PackedScene" uid="uid://crvdqm2gtl2af" path="res://objs/SentimentMachine.tscn" id="6_yeyi7"]
 
 [sub_resource type="Gradient" id="Gradient_enu7a"]
 colors = PackedColorArray(0.572549, 1, 0.984314, 1, 0.200383, 0.751797, 0.981995, 1)
@@ -14,7 +13,7 @@ gradient = SubResource("Gradient_enu7a")
 width = 1024
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqv81"]
-size = Vector2(1277.5, 820.5)
+size = Vector2(1451, 820.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -52,14 +51,6 @@ position = Vector2(917, 485)
 modulate = Color(0, 1, 0.533333, 1)
 position = Vector2(988, 293)
 
-[node name="Wall" parent="." instance=ExtResource("2_rqc7e")]
-position = Vector2(162, 403)
-scale = Vector2(0.119185, 9.05063)
-
-[node name="CollisionShape2D" parent="Wall" index="1"]
-position = Vector2(-318.833, 0)
-scale = Vector2(6.91767, 1)
-
 [node name="Wall4" parent="." instance=ExtResource("2_rqc7e")]
 position = Vector2(723, 810)
 scale = Vector2(14.881, 0.609)
@@ -81,99 +72,9 @@ script = ExtResource("4_ggtct")
 Force = 12291.6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-position = Vector2(805.25, 404.75)
+position = Vector2(718.5, 404.75)
 shape = SubResource("RectangleShape2D_uqv81")
 debug_color = Color(0, 0.596078, 0.701961, 0)
 
-[node name="GravityObj" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(315, 585)
-
-[node name="GravityObj2" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(493, 563)
-
-[node name="GravityObj21" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(702, 555)
-rotation = 0.000620102
-
-[node name="GravityObj22" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(880, 533)
-
-[node name="GravityObj23" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(1094, 510)
-
-[node name="GravityObj24" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(1272, 488)
-
-[node name="GravityObj25" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(1185, 522)
-
-[node name="GravityObj26" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(1363, 500)
-
-[node name="GravityObj27" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(1032, 632)
-
-[node name="GravityObj28" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(1210, 610)
-
-[node name="GravityObj29" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(480, 700)
-
-[node name="GravityObj30" parent="." instance=ExtResource("4_e2o46")]
-position = Vector2(658, 678)
-
-[node name="GravityObj3" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(361, 631)
-
-[node name="GravityObj4" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(516, 613)
-
-[node name="GravityObj5" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(588, 556)
-
-[node name="GravityObj6" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(457, 668)
-
-[node name="GravityObj7" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(612, 650)
-
-[node name="GravityObj8" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(684, 593)
-
-[node name="GravityObj9" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(637, 504)
-
-[node name="GravityObj10" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(792, 486)
-
-[node name="GravityObj11" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(864, 429)
-
-[node name="GravityObj12" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(794, 566)
-
-[node name="GravityObj13" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(949, 548)
-
-[node name="GravityObj14" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(1021, 491)
-
-[node name="GravityObj15" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(801, 648)
-
-[node name="GravityObj16" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(956, 630)
-
-[node name="GravityObj17" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(1028, 573)
-
-[node name="GravityObj18" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(1043, 436)
-
-[node name="GravityObj19" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(1198, 418)
-
-[node name="GravityObj20" parent="." instance=ExtResource("5_viiry")]
-position = Vector2(1270, 361)
-
-[editable path="Wall"]
+[node name="SentimentMachine" parent="." instance=ExtResource("6_yeyi7")]
+position = Vector2(97, 729)

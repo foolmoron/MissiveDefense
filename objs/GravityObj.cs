@@ -12,17 +12,28 @@ public partial class GravityObj : Node2D
     public RigidBody2D HandleRigidBody;
     [Export]
     public Joint2D Joint;
-	[Export]
-	public PackedScene ExplosionScn;
+    [Export]
+    public PackedScene ExplosionScn;
 
-	Vector2 originalHandleOffset;
+    [Export]
+    public CanvasItem[] ItemsToColor;
+
+    Vector2 originalHandleOffset;
 
     bool held;
-	bool released;
+    bool released;
+
+    [Export]
+    public Color TargetColor;
+
+
+    static RandomNumberGenerator R = new RandomNumberGenerator();
 
     public override void _Ready()
     {
         originalHandleOffset = (MainRigidBody.GlobalPosition - HandleRigidBody.GlobalPosition);
+        var r = R.RandiRange(-1, Colors.Inst.AllColors.Length - 1);
+        TargetColor =  r == -1 ? Colors.Inst.BrownColor : Colors.Inst.AllColors[r];
     }
 
     public override void _EnterTree()
@@ -39,25 +50,31 @@ public partial class GravityObj : Node2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
+        foreach (var item in ItemsToColor)
+        {
+            item.Modulate = TargetColor;
+        }
+
         if (held && !Input.IsMouseButtonPressed(MouseButton.Left))
         {
             held = false;
-			released = true;
+            released = true;
             MainRigidBody.RemoveChild(Joint);
         }
 
         if (held)
         {
             HandleRigidBody.GlobalPosition =
-				GetViewport().GetMousePosition();
+                GetViewport().GetMousePosition();
         }
 
-        if (released && MainRigidBody.GetContactCount() > 0) {
+        if (released && MainRigidBody.GetContactCount() > 0)
+        {
             var scn = ExplosionScn.Instantiate<Node2D>();
             GetParent().AddChild(scn);
-			scn.GlobalPosition = MainRigidBody.GlobalPosition;
+            scn.GlobalPosition = MainRigidBody.GlobalPosition;
 
-			QueueFree();
+            QueueFree();
         }
     }
 

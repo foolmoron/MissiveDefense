@@ -10,13 +10,22 @@ public partial class GravityObj : Node
     public RigidBody2D MainRigidBody;
     [Export]
     public RigidBody2D HandleRigidBody;
+    [Export]
+    public Joint2D Joint;
+
+	Vector2 originalHandlePos;
 
     bool held;
+
+    public override void _Ready()
+    {
+        originalHandlePos = HandleRigidBody.Position;
+    }
 
     public override void _EnterTree()
     {
         All.Add(this);
-        // RemoveChild(HandleRigidBody);
+        MainRigidBody.RemoveChild(Joint);
     }
 
     public override void _ExitTree()
@@ -30,7 +39,8 @@ public partial class GravityObj : Node
         if (held && !Input.IsMouseButtonPressed(MouseButton.Left))
         {
             held = false;
-            // RemoveChild(HandleRigidBody);
+            MainRigidBody.RemoveChild(Joint);
+            HandleRigidBody.Position = originalHandlePos;
         }
 
         if (held)
@@ -45,7 +55,7 @@ public partial class GravityObj : Node
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
         {
             held = true;
-            // AddChild(HandleRigidBody);
+            MainRigidBody.AddChild(Joint);
         }
     }
 }

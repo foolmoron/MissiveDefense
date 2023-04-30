@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dy7l5ltcwvi27" path="res://objs/Target.tscn" id="1_pnl83"]
 [ext_resource type="PackedScene" uid="uid://ckksm06dkqa2a" path="res://objs/Wall.tscn" id="2_rqc7e"]
-[ext_resource type="PackedScene" uid="uid://ddgtrnxa2f0b" path="res://objs/Missile.tscn" id="4_e2o46"]
+[ext_resource type="PackedScene" uid="uid://n4aaog1wt8pg" path="res://objs/Missile.tscn" id="4_e2o46"]
 [ext_resource type="Script" path="res://scripts/ClickArea.cs" id="4_ggtct"]
-[ext_resource type="PackedScene" uid="uid://be5g4h3yswvyv" path="res://objs/Mail.tscn" id="5_viiry"]
+[ext_resource type="PackedScene" uid="uid://co25lrxb4j5qf" path="res://objs/Mail.tscn" id="5_viiry"]
 
 [sub_resource type="Gradient" id="Gradient_enu7a"]
 colors = PackedColorArray(0.572549, 1, 0.984314, 1, 0.200383, 0.751797, 0.981995, 1)
@@ -54,7 +54,11 @@ position = Vector2(988, 293)
 
 [node name="Wall" parent="." instance=ExtResource("2_rqc7e")]
 position = Vector2(162, 403)
-scale = Vector2(0.239184, 9.05063)
+scale = Vector2(0.119185, 9.05063)
+
+[node name="CollisionShape2D" parent="Wall" index="1"]
+position = Vector2(-318.833, 0)
+scale = Vector2(6.91767, 1)
 
 [node name="Wall4" parent="." instance=ExtResource("2_rqc7e")]
 position = Vector2(723, 841)
@@ -81,122 +85,94 @@ position = Vector2(805.25, 404.75)
 shape = SubResource("RectangleShape2D_uqv81")
 debug_color = Color(0, 0.596078, 0.701961, 0)
 
-[node name="GravityObj" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(315, 585)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj2" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj2" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(493, 563)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj21" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj21" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(702, 555)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj22" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj22" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(880, 533)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj23" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj23" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(1094, 510)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj24" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj24" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(1272, 488)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj25" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj25" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(1185, 522)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj26" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj26" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(1363, 500)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj27" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj27" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(1032, 632)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj28" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj28" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(1210, 610)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj29" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj29" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(480, 700)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj30" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("4_e2o46")]
+[node name="GravityObj30" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(658, 678)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj3" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj3" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(361, 631)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj4" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj4" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(516, 613)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj5" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj5" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(588, 556)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj6" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj6" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(457, 668)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj7" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj7" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(612, 650)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj8" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj8" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(684, 593)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj9" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj9" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(637, 504)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj10" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj10" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(792, 486)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj11" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj11" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(864, 429)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj12" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj12" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(794, 566)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj13" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj13" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(949, 548)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj14" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj14" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(1021, 491)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj15" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj15" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(801, 648)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj16" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj16" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(956, 630)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj17" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj17" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(1028, 573)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj18" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj18" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(1043, 436)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj19" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj19" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(1198, 418)
-HandleRigidBody = NodePath("Handle")
 
-[node name="GravityObj20" parent="." node_paths=PackedStringArray("HandleRigidBody") instance=ExtResource("5_viiry")]
+[node name="GravityObj20" parent="." instance=ExtResource("5_viiry")]
 position = Vector2(1270, 361)
-HandleRigidBody = NodePath("Handle")
+
+[editable path="Wall"]

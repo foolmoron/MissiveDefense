@@ -6,10 +6,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1x4c"]
 
-[node name="GravityObj" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody")]
+[node name="GravityObj" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody", "Joint")]
 script = ExtResource("1_tj68t")
 MainRigidBody = NodePath("RigidBody2D")
 HandleRigidBody = NodePath("RigidBody2D/Handle")
+Joint = NodePath("RigidBody2D/Joint")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 input_pickable = true
@@ -23,22 +24,25 @@ texture = ExtResource("1_fh5kr")
 position = Vector2(2.08165e-12, 2.08165e-12)
 polygon = PackedVector2Array(36, -4, 23, 36, -31, 29, -37, -12, 8, -32)
 
+[node name="Joint" type="PinJoint2D" parent="RigidBody2D"]
+position = Vector2(17, -20)
+node_a = NodePath("..")
+node_b = NodePath("../Handle")
+softness = 9.0
+
 [node name="Handle" type="RigidBody2D" parent="RigidBody2D"]
 position = Vector2(17, -20)
 collision_layer = 0
 collision_mask = 0
 gravity_scale = 0.0
 can_sleep = false
-
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="RigidBody2D/Handle"]
-node_a = NodePath("../..")
-node_b = NodePath("..")
-length = 3.0
+freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Handle"]
 shape = SubResource("CircleShape2D_i1x4c")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Handle"]
+visible = false
 modulate = Color(0.968627, 0, 1, 1)
 scale = Vector2(-0.0404713, -0.0404713)
 texture = ExtResource("3_ium2f")

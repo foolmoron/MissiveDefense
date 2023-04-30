@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class GravityObj : Node
+public partial class GravityObj : Node2D
 {
     public static readonly List<GravityObj> All = new List<GravityObj>();
 
@@ -12,14 +12,17 @@ public partial class GravityObj : Node
     public RigidBody2D HandleRigidBody;
     [Export]
     public Joint2D Joint;
+	[Export]
+	public PackedScene ExplosionScn;
 
-	Vector2 originalHandlePos;
+	Vector2 originalHandleOffset;
 
     bool held;
+	bool released;
 
     public override void _Ready()
     {
-        originalHandlePos = HandleRigidBody.Position;
+        originalHandleOffset = (MainRigidBody.GlobalPosition - HandleRigidBody.GlobalPosition);
     }
 
     public override void _EnterTree()
@@ -39,8 +42,8 @@ public partial class GravityObj : Node
         if (held && !Input.IsMouseButtonPressed(MouseButton.Left))
         {
             held = false;
+			released = true;
             MainRigidBody.RemoveChild(Joint);
-            HandleRigidBody.Position = originalHandlePos;
         }
 
         if (held)
@@ -48,13 +51,22 @@ public partial class GravityObj : Node
             HandleRigidBody.GlobalPosition =
 				GetViewport().GetMousePosition();
         }
+
+        if (released && MainRigidBody.GetContactCount() > 0) {
+            var scn = ExplosionScn.Instantiate<Node2D>();
+            GetParent().AddChild(scn);
+			scn.GlobalPosition = MainRigidBody.GlobalPosition;
+
+			QueueFree();
+        }
     }
 
     public void InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
     {
-        if (@event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
+        if (!released && @event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
         {
             held = true;
+            HandleRigidBody.GlobalPosition = MainRigidBody.GlobalPosition + originalHandleOffset;
             MainRigidBody.AddChild(Joint);
         }
     }

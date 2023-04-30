@@ -1,19 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxmxiqx6r2a2"]
+[gd_scene load_steps=6 format=3 uid="uid://nxmxiqx6r2a2"]
 
 [ext_resource type="Texture2D" uid="uid://cemfcds4038cu" path="res://art/square.svg" id="1_fh5kr"]
 [ext_resource type="Script" path="res://objs/GravityObj.cs" id="1_tj68t"]
+[ext_resource type="PackedScene" uid="uid://cicg7sw4w1flb" path="res://objs/ExplosionParticles.tscn" id="2_3720b"]
 [ext_resource type="Texture2D" uid="uid://d1ibpsrtw2wn1" path="res://art/circle.svg" id="3_ium2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1x4c"]
 
-[node name="GravityObj" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody", "Joint")]
+[node name="GravityObj2" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody", "Joint")]
 script = ExtResource("1_tj68t")
 MainRigidBody = NodePath("RigidBody2D")
-HandleRigidBody = NodePath("RigidBody2D/Handle")
+HandleRigidBody = NodePath("Handle")
 Joint = NodePath("RigidBody2D/Joint")
+ExplosionScn = ExtResource("2_3720b")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 input_pickable = true
+continuous_cd = 1
+max_contacts_reported = 1
+contact_monitor = true
 can_sleep = false
 
 [node name="Anim" type="Sprite2D" parent="RigidBody2D"]
@@ -27,10 +32,10 @@ polygon = PackedVector2Array(36, -4, 23, 36, -31, 29, -37, -12, 8, -32)
 [node name="Joint" type="PinJoint2D" parent="RigidBody2D"]
 position = Vector2(17, -20)
 node_a = NodePath("..")
-node_b = NodePath("../Handle")
-softness = 9.0
+node_b = NodePath("../../Handle")
+softness = 1.16
 
-[node name="Handle" type="RigidBody2D" parent="RigidBody2D"]
+[node name="Handle" type="RigidBody2D" parent="."]
 position = Vector2(17, -20)
 collision_layer = 0
 collision_mask = 0
@@ -38,10 +43,10 @@ gravity_scale = 0.0
 can_sleep = false
 freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Handle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Handle"]
 shape = SubResource("CircleShape2D_i1x4c")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Handle"]
+[node name="Sprite2D" type="Sprite2D" parent="Handle"]
 visible = false
 modulate = Color(0.968627, 0, 1, 1)
 scale = Vector2(-0.0404713, -0.0404713)

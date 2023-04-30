@@ -5,6 +5,9 @@
 
 [node name="GravityObj" instance=ExtResource("1_55suh")]
 
+[node name="RigidBody2D" parent="." index="0"]
+mass = 6.75
+
 [node name="Anim" parent="RigidBody2D" index="0"]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_wblbe")
@@ -17,5 +20,5 @@ polygon = PackedVector2Array(8, 50, 24, 66, 7, 70, -7, 70, -24, 66, -9, 50, -9, 
 [node name="Joint" parent="RigidBody2D" index="2"]
 position = Vector2(0, -20)
 
-[node name="Handle" parent="RigidBody2D" index="3"]
+[node name="Handle" parent="." index="1"]
 position = Vector2(0, -20)

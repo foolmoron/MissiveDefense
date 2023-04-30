@@ -23,6 +23,7 @@ ExplodeOnClick="*res://scripts/ClickArea.cs"
 
 window/size/viewport_width=1440
 window/size/viewport_height=810
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/handheld/orientation=1
 

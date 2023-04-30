@@ -17,5 +17,5 @@ polygon = PackedVector2Array(35, -16, 35, 15, 32, 19, -32, 19, -35, 16, -35, -15
 [node name="Joint" parent="RigidBody2D" index="2"]
 position = Vector2(13, -5)
 
-[node name="Handle" parent="RigidBody2D" index="3"]
+[node name="Handle" parent="." index="1"]
 position = Vector2(13, -5)

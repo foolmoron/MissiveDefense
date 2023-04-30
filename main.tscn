@@ -61,19 +61,19 @@ position = Vector2(-318.833, 0)
 scale = Vector2(6.91767, 1)
 
 [node name="Wall4" parent="." instance=ExtResource("2_rqc7e")]
-position = Vector2(723, 841)
+position = Vector2(723, 810)
 scale = Vector2(14.881, 0.609)
 
 [node name="Wall5" parent="." instance=ExtResource("2_rqc7e")]
-position = Vector2(720, -34)
+position = Vector2(720, -3)
 scale = Vector2(14.881, 0.609)
 
 [node name="Wall2" parent="." instance=ExtResource("2_rqc7e")]
-position = Vector2(-32, 408)
+position = Vector2(-4, 408)
 scale = Vector2(0.609, 8.42312)
 
 [node name="Wall3" parent="." instance=ExtResource("2_rqc7e")]
-position = Vector2(1477, 408)
+position = Vector2(1442, 409)
 scale = Vector2(0.609, 8.42312)
 
 [node name="ClickArea" type="Area2D" parent="."]
@@ -93,6 +93,7 @@ position = Vector2(493, 563)
 
 [node name="GravityObj21" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(702, 555)
+rotation = 0.000620102
 
 [node name="GravityObj22" parent="." instance=ExtResource("4_e2o46")]
 position = Vector2(880, 533)

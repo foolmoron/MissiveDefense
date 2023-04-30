@@ -27,13 +27,5 @@ public partial class ClickArea : Area2D
 
     private void HandleLeftClick(Vector2 position)
     {
-        return;
-        foreach (var go in GravityObj.All)
-        {
-            var rb = go.MainRigidBody;
-            GD.Print("ClickArea._InputEvent: Left Click: ApplyImpulse");
-            var dist = rb.GlobalPosition.DistanceTo(position);
-            rb.ApplyImpulse(((rb.GlobalPosition - position).Normalized() + Vector2.Up * 0.5f).Normalized() * Force / Mathf.Pow(dist, 0.8f));
-        }
     }
 }

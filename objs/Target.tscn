@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dy7l5ltcwvi27"]
+[gd_scene load_steps=6 format=3 uid="uid://dy7l5ltcwvi27"]
 
+[ext_resource type="Script" path="res://objs/Target.cs" id="1_vflvd"]
 [ext_resource type="Texture2D" uid="uid://d1ibpsrtw2wn1" path="res://art/circle.svg" id="1_x6xfu"]
 [ext_resource type="Texture2D" uid="uid://cemfcds4038cu" path="res://art/square.svg" id="2_jo04f"]
 [ext_resource type="Script" path="res://scripts/RotateParent.cs" id="3_crpnn"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3fuf"]
+radius = 265.552
+
 [node name="Target" type="Node2D"]
 scale = Vector2(0.0543103, 0.0543103)
+script = ExtResource("1_vflvd")
 
 [node name="Base" type="Sprite2D" parent="."]
 texture = ExtResource("1_x6xfu")
@@ -31,3 +36,10 @@ texture = ExtResource("2_jo04f")
 [node name="RotateParent" type="Node" parent="."]
 script = ExtResource("3_crpnn")
 SpeedRad = 266.818
+
+[node name="StaticBody2D" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(1.05133, 1.05133)
+shape = SubResource("CircleShape2D_b3fuf")

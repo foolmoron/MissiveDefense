@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5g4h3yswvyv"]
+
+[ext_resource type="PackedScene" uid="uid://nxmxiqx6r2a2" path="res://objs/GravityObj.tscn" id="1_palby"]
+[ext_resource type="Texture2D" uid="uid://cfcqvqhdrw3jc" path="res://art/mail.svg" id="2_le82e"]
+
+[node name="GravityObj" instance=ExtResource("1_palby")]
+
+[node name="Anim" parent="RigidBody2D" index="0"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_le82e")
+
+[node name="CollisionShape2D" parent="RigidBody2D" index="1"]
+show_behind_parent = true
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(35, -16, 35, 15, 32, 19, -32, 19, -35, 16, -35, -15, -32, -18, 32, -18)
+
+[node name="Handle" parent="RigidBody2D" index="2"]
+position = Vector2(14, -7)

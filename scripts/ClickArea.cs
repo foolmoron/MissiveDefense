@@ -21,24 +21,19 @@ public partial class ClickArea : Area2D
     {
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
         {
-            HandleLeftClick(mouseEvent.Position);
+            HandleLeftClick(viewport.GetMousePosition());
         }
     }
 
     private void HandleLeftClick(Vector2 position)
     {
-		GD.Print($"z {GravityObj.All.Count}");
+        return;
         foreach (var go in GravityObj.All)
         {
-            foreach (var obj in go.GetChildren())
-            {
-                if (obj is RigidBody2D rb)
-                {
-					GD.Print("ClickArea._InputEvent: Left Click: ApplyImpulse");
-					var dist = rb.GlobalPosition.DistanceTo(position);
-                    rb.ApplyImpulse(((rb.GlobalPosition - position).Normalized() + Vector2.Up * 0.5f).Normalized() * Force / Mathf.Pow(dist, 0.8f));
-                }
-            }
+            var rb = go.MainRigidBody;
+            GD.Print("ClickArea._InputEvent: Left Click: ApplyImpulse");
+            var dist = rb.GlobalPosition.DistanceTo(position);
+            rb.ApplyImpulse(((rb.GlobalPosition - position).Normalized() + Vector2.Up * 0.5f).Normalized() * Force / Mathf.Pow(dist, 0.8f));
         }
     }
 }

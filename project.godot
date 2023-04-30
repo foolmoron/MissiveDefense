@@ -30,6 +30,10 @@ window/handheld/orientation=1
 
 project/assembly_name="Missive Defense"
 
+[layer_names]
+
+2d_physics/layer_21="kk"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

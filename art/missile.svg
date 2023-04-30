@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 96.515 285.242" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path d="M 46.192 230.691 Q 47.69 229.204 49.187 230.691 L 91.557 272.779 Q 93.054 274.266 90.06 274.266 L 5.319 274.266 Q 2.325 274.266 3.822 272.779 Z" style="stroke-width: 3px; stroke: rgb(38, 38, 56); fill: rgb(150, 149, 151);" bx:shape="triangle 2.325 229.204 90.729 45.062 0.5 0.033 1@d9938aa5" bx:origin="0.499251 0.52"/>
+  <path d="M 46.807 180.514 Q 47.9 179.82 48.994 180.514 L 79.949 200.145 Q 81.043 200.839 78.856 200.839 L 16.945 200.839 Q 14.758 200.839 15.852 200.145 Z" style="stroke-width: 3px; stroke: rgb(38, 38, 56); fill: rgb(150, 149, 151);" bx:shape="triangle 14.758 179.82 66.285 21.019 0.5 0.033 1@fe100dc1"/>
+  <rect y="47.815" width="31.457" height="232.151" style="stroke-width: 3px; stroke: rgb(38, 38, 56); fill: rgb(77, 78, 86);" x="31.323" rx="1.858" ry="1.858"/>
+  <path d="M 45.839 5.227 Q 46.759 3.74 47.678 5.227 L 73.701 47.315 Q 74.62 48.802 72.781 48.802 L 20.736 48.802 Q 18.897 48.802 19.816 47.315 Z" style="stroke-width: 3px; stroke: rgb(38, 38, 56); fill: rgb(150, 149, 151);" bx:shape="triangle 18.897 3.74 55.723 45.062 0.5 0.033 1@1b12b6e0"/>
+  <rect x="31.754" y="79.88" width="30.508" height="16" style="fill: rgb(248, 242, 68); stroke-width: 2px; stroke: rgb(38, 38, 56);"/>
+  <rect x="31.754" y="213.024" width="30.508" height="16" style="fill: rgb(248, 242, 68); stroke: rgb(38, 38, 56); stroke-width: 2px;"/>
+  <rect x="31.754" y="143.664" width="30.508" height="16" style="fill: rgb(248, 242, 68); stroke-width: 2px; stroke: rgb(38, 38, 56);"/>
+</svg>

@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://nxmxiqx6r2a2"]
+[gd_scene load_steps=5 format=3 uid="uid://nxmxiqx6r2a2"]
 
 [ext_resource type="Texture2D" uid="uid://cemfcds4038cu" path="res://art/square.svg" id="1_fh5kr"]
 [ext_resource type="Script" path="res://objs/GravityObj.cs" id="1_tj68t"]
+[ext_resource type="Texture2D" uid="uid://d1ibpsrtw2wn1" path="res://art/circle.svg" id="3_ium2f"]
 
-[node name="GravityObj" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1x4c"]
+
+[node name="GravityObj" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody")]
 script = ExtResource("1_tj68t")
+MainRigidBody = NodePath("RigidBody2D")
+HandleRigidBody = NodePath("RigidBody2D/Handle")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+input_pickable = true
+can_sleep = false
 
 [node name="Anim" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(0.1, 0.1)
@@ -15,3 +22,25 @@ texture = ExtResource("1_fh5kr")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="RigidBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 polygon = PackedVector2Array(36, -4, 23, 36, -31, 29, -37, -12, 8, -32)
+
+[node name="Handle" type="RigidBody2D" parent="RigidBody2D"]
+position = Vector2(17, -20)
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+can_sleep = false
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="RigidBody2D/Handle"]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+length = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Handle"]
+shape = SubResource("CircleShape2D_i1x4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Handle"]
+modulate = Color(0.968627, 0, 1, 1)
+scale = Vector2(-0.0404713, -0.0404713)
+texture = ExtResource("3_ium2f")
+
+[connection signal="input_event" from="RigidBody2D" to="." method="InputEvent"]

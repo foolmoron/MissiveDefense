@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://csujfquenikel"]
+
+[ext_resource type="Texture2D" uid="uid://d1ibpsrtw2wn1" path="res://art/circle.svg" id="1_uo0bs"]
+[ext_resource type="Script" path="res://objs/ExplosionParticles.cs" id="2_1ehaq"]
+
+[sub_resource type="Curve" id="Curve_ruilq"]
+_data = [Vector2(2.08165e-12, 1), 0.0, -2.61346, 0, 0, Vector2(1, 0.00661635), 0.0115254, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ph4cl"]
+offsets = PackedFloat32Array(0.11165, 1)
+colors = PackedColorArray(0.857812, 0.89, 0.6141, 1, 0.55, 0.55, 0.55, 0)
+
+[node name="MailParticles" type="CPUParticles2D"]
+emitting = false
+amount = 5
+lifetime = 0.65
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+texture = ExtResource("1_uo0bs")
+emission_shape = 1
+emission_sphere_radius = 23.05
+direction = Vector2(2.08165e-12, -1)
+spread = 19.25
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 40.0
+initial_velocity_max = 80.0
+scale_amount_min = 0.03
+scale_amount_max = 0.08
+scale_amount_curve = SubResource("Curve_ruilq")
+color_ramp = SubResource("Gradient_ph4cl")
+script = ExtResource("2_1ehaq")

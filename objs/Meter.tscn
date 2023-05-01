@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3q3u12ydew8"]
+[gd_scene load_steps=4 format=3 uid="uid://cgd27d6nivwjn"]
 
 [ext_resource type="Texture2D" uid="uid://bjii8c3oo3yqp" path="res://art/meter.svg" id="1_df5v5"]
 [ext_resource type="Script" path="res://objs/Meter.cs" id="1_exukn"]

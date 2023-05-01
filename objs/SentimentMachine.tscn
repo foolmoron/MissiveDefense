@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cx37tht3mk0tq"]
 
-[ext_resource type="PackedScene" path="res://objs/Meter.tscn" id="1_3nqci"]
+[ext_resource type="PackedScene" uid="uid://cgd27d6nivwjn" path="res://objs/Meter.tscn" id="1_3nqci"]
 [ext_resource type="Texture2D" uid="uid://cmird8jo1i2dj" path="res://art/machine.svg" id="1_7jifv"]
 [ext_resource type="Script" path="res://objs/SentimentMachine.cs" id="1_lujgx"]
 [ext_resource type="PackedScene" uid="uid://be5g4h3yswvyv" path="res://objs/Mail.tscn" id="2_piofv"]

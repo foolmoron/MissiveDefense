@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cemfcds4038cu" path="res://art/square.svg" id="1_fh5kr"]
 [ext_resource type="Script" path="res://objs/GravityObj.cs" id="1_tj68t"]
-[ext_resource type="PackedScene" uid="uid://cicg7sw4w1flb" path="res://objs/ExplosionParticles.tscn" id="2_3720b"]
+[ext_resource type="PackedScene" path="res://objs/ExplosionParticles.tscn" id="2_3720b"]
 [ext_resource type="Texture2D" uid="uid://d1ibpsrtw2wn1" path="res://art/circle.svg" id="3_ium2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1x4c"]
 
-[node name="GravityObj2" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody", "Joint")]
+[node name="GravityObj" type="Node2D" node_paths=PackedStringArray("MainRigidBody", "HandleRigidBody", "Joint")]
 script = ExtResource("1_tj68t")
 MainRigidBody = NodePath("RigidBody2D")
 HandleRigidBody = NodePath("Handle")
@@ -17,7 +17,7 @@ ExplosionScn = ExtResource("2_3720b")
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 input_pickable = true
 continuous_cd = 1
-max_contacts_reported = 1
+max_contacts_reported = 4
 contact_monitor = true
 can_sleep = false
 

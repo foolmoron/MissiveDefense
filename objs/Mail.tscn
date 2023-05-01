@@ -1,15 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://co25lrxb4j5qf"]
+[gd_scene load_steps=5 format=3 uid="uid://be5g4h3yswvyv"]
 
 [ext_resource type="PackedScene" uid="uid://nxmxiqx6r2a2" path="res://objs/GravityObj.tscn" id="1_palby"]
 [ext_resource type="Texture2D" uid="uid://cfcqvqhdrw3jc" path="res://art/mail.svg" id="2_le82e"]
-[ext_resource type="PackedScene" uid="uid://csujfquenikel" path="res://objs/MailParticles.tscn" id="2_vdaul"]
+[ext_resource type="PackedScene" path="res://objs/MailParticles.tscn" id="2_vdaul"]
+[ext_resource type="Texture2D" uid="uid://dtqjdpdgwlicn" path="res://art/mailoverlay.svg" id="3_mj7h2"]
 
-[node name="GravityObj" instance=ExtResource("1_palby")]
+[node name="GravityObj" node_paths=PackedStringArray("Item1") instance=ExtResource("1_palby")]
 ExplosionScn = ExtResource("2_vdaul")
+Item1 = NodePath("RigidBody2D/Anim/Sprite2D")
 
 [node name="Anim" parent="RigidBody2D" index="0"]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_le82e")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Anim" index="0"]
+texture = ExtResource("3_mj7h2")
 
 [node name="CollisionShape2D" parent="RigidBody2D" index="1"]
 show_behind_parent = true

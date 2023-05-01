@@ -8,29 +8,57 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3fuf"]
 radius = 265.552
 
-[node name="Target" type="Node2D"]
-scale = Vector2(0.0543103, 0.0543103)
+[node name="Target" type="Node2D" node_paths=PackedStringArray("Item1")]
+scale = Vector2(0.0787335, 0.0787335)
 script = ExtResource("1_vflvd")
+Item1 = NodePath("Base")
 
 [node name="Base" type="Sprite2D" parent="."]
+position = Vector2(-1.53613, -3.07225)
 texture = ExtResource("1_x6xfu")
 
 [node name="EyeL" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.886275, 0.886275, 0.886275, 1)
 position = Vector2(-88, -87)
 scale = Vector2(-0.150815, -0.150815)
 texture = ExtResource("1_x6xfu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="EyeL2" type="Sprite2D" parent="EyeL"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(91, -70)
+position = Vector2(-3.20801, -17.9336)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_x6xfu")
+
+[node name="EyeL2" type="Sprite2D" parent="."]
+modulate = Color(0.886275, 0.886275, 0.886275, 1)
+position = Vector2(82.3154, -87)
 scale = Vector2(-0.150815, -0.150815)
+texture = ExtResource("1_x6xfu")
+
+[node name="EyeL2" type="Sprite2D" parent="EyeL2"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(28.874, -5.10107)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_x6xfu")
 
 [node name="Square" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-16, 102)
-scale = Vector2(0.47, 0.042)
+position = Vector2(-11.4331, 95.6055)
+scale = Vector2(0.171199, 0.042)
+texture = ExtResource("2_jo04f")
+
+[node name="Square2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-101.858, 84.6484)
+rotation = 0.188672
+scale = Vector2(-0.253441, 0.042)
+texture = ExtResource("2_jo04f")
+
+[node name="Square3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(72.5984, 82.8203)
+rotation = -0.235573
+scale = Vector2(-0.217605, 0.042)
 texture = ExtResource("2_jo04f")
 
 [node name="RotateParent" type="Node" parent="."]
@@ -43,3 +71,4 @@ freeze = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2(1.05133, 1.05133)
 shape = SubResource("CircleShape2D_b3fuf")
+debug_color = Color(0, 0.596078, 0.701961, 0)

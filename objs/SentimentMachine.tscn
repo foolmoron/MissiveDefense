@@ -1,23 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://crvdqm2gtl2af"]
+[gd_scene load_steps=10 format=3 uid="uid://cx37tht3mk0tq"]
 
-[ext_resource type="PackedScene" uid="uid://c3q3u12ydew8" path="res://objs/Meter.tscn" id="1_3nqci"]
+[ext_resource type="PackedScene" path="res://objs/Meter.tscn" id="1_3nqci"]
 [ext_resource type="Texture2D" uid="uid://cmird8jo1i2dj" path="res://art/machine.svg" id="1_7jifv"]
 [ext_resource type="Script" path="res://objs/SentimentMachine.cs" id="1_lujgx"]
-[ext_resource type="PackedScene" uid="uid://co25lrxb4j5qf" path="res://objs/Mail.tscn" id="2_piofv"]
-[ext_resource type="PackedScene" uid="uid://n4aaog1wt8pg" path="res://objs/Missile.tscn" id="3_obro6"]
+[ext_resource type="PackedScene" uid="uid://be5g4h3yswvyv" path="res://objs/Mail.tscn" id="2_piofv"]
+[ext_resource type="PackedScene" uid="uid://ddgtrnxa2f0b" path="res://objs/Missile.tscn" id="3_obro6"]
 
 [sub_resource type="Curve" id="Curve_x0ytv"]
-_data = [Vector2(2.08165e-12, 2.08165e-12), 0.0, 0.0, 0, 0, Vector2(0.25, 2.08165e-12), 0.0, 0.0, 0, 0, Vector2(1, 0.6), 1.30885, 0.0, 0, 0]
+_data = [Vector2(2.08165e-12, 2.08165e-12), 0.0, 0.0, 0, 0, Vector2(0.262411, 0.145455), 2.31554, 2.31554, 0, 0, Vector2(0.996454, 0.781818), 0.878961, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_hbgg2"]
 font_size = 202
 
-[node name="SentimentMachine" type="Node2D" node_paths=PackedStringArray("SpawnPoint", "Meter")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl5sd"]
+bg_color = Color(0.0994691, 0.0994691, 0.0994691, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2u4p"]
+bg_color = Color(0.407929, 1, 0.479633, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="SentimentMachine" type="Node2D" node_paths=PackedStringArray("SpawnPoint", "Meter", "Bar")]
 script = ExtResource("1_lujgx")
 SpawnPoint = NodePath("Spawn")
 SpawnInterval = 1.0
 Meter = NodePath("Meter")
+Bar = NodePath("ProgressBar")
+TimeMax = 120.0
+Playing = false
 MissileChanceCurve = SubResource("Curve_x0ytv")
 MailScn = ExtResource("2_piofv")
 MissileScn = ExtResource("3_obro6")
@@ -34,21 +51,60 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -64.0
-offset_right = 1078.0
-offset_bottom = 215.0
+offset_left = -37.0
+offset_top = -70.0
+offset_right = 1092.0
+offset_bottom = 209.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.0969901, 0.0969901)
+scale = Vector2(0.07092, 0.07092)
 text = "SENTIMENT"
 label_settings = SubResource("LabelSettings_hbgg2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Meter" parent="." instance=ExtResource("1_3nqci")]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.356318, 0.356318)
+position = Vector2(1, -27)
+scale = Vector2(0.23511, 0.23511)
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 12.0
+offset_right = 1623.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.07092, 0.07092)
+text = "TIME REMAINING"
+label_settings = SubResource("LabelSettings_hbgg2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Spawn" type="Node2D" parent="."]
 position = Vector2(128, 19)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 33.0
+offset_right = 67.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hl5sd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t2u4p")
+max_value = 1.0
+step = 0.0
+value = 1.0
+show_percentage = false

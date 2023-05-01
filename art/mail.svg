@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 146.226 77.122" xmlns="http://www.w3.org/2000/svg">
-  <rect width="135.65" height="69.507" style="fill: rgb(251, 255, 222); stroke-width: 3px; stroke: rgb(242, 53, 53);" rx="4.485" ry="4.485" x="5.605" y="4.484"/>
-  <polyline style="fill: rgb(251, 255, 222); stroke-width: 3px; stroke: rgb(242, 53, 53);" points="5.605 10.089 70.067 52.129 141.255 12.331"/>
+  <rect width="135.65" height="69.507" style="fill: rgb(251, 255, 222); stroke-width: 3px;" rx="4.485" ry="4.485" x="5.605" y="4.484"/>
 </svg>

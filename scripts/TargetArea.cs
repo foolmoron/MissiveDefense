@@ -36,7 +36,7 @@ public partial class TargetArea : Node
 			spawnTime = SpawnInterval;
 			var t = TargetScn.Instantiate<Target>();
 			GetParent().AddChild(t);
-			t.GlobalPosition = new Vector2(R.RandfRange(SpawnRect.Position.X, SpawnRect.End.Y), R.RandfRange(SpawnRect.Position.X, SpawnRect.End.Y));
+			t.GlobalPosition = new Vector2(R.RandfRange(SpawnRect.Position.X, SpawnRect.End.X), R.RandfRange(SpawnRect.Position.Y, SpawnRect.End.Y));
 		}
 	}
 }
